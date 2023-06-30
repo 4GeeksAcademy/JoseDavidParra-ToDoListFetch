@@ -14,6 +14,7 @@ const Home = () => {
             "Content-Type": "application/json",
             },
             body:JSON.stringify([])})
+            .then((response)=>console.log("CREAR USUARIO",response.ok))
             .then(()=>getTasks())
     }
 
@@ -26,7 +27,7 @@ const Home = () => {
                 createUser()
                 
             }
-            console.log(response);
+            console.log("GET",response.ok);
             return(response.json())
         })
         .then((data)=>{
@@ -45,7 +46,7 @@ const Home = () => {
         },
         body: JSON.stringify(tasks),
         })
-        .then((response)=>console.log(response))
+        .then((response)=>console.log("UPDATE",response.ok))
         setUpdate(false)
         }
     }
